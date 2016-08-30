@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>first example</title>
+        <title>TODO supply a title</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="js/avalon.js"></script>
-        <script>
+        <meta name="viewport" content="width=device-width">
+        <script src="./dist/avalon.js"></script>
+        <script >
             var vm = avalon.define({
                 $id: "test",
-                name: "1111",
-                array: [11,22,33]
+                title:111,
+                src: "222",
+                lang: 333
             })
-            setTimeout(function(){
-               vm.array.set(0, 444)
-            }, 10000)
+
         </script>
     </head>
-
-    <body ms-controller="test">
-        <input ms-duplex="@name">
-        <p>Hello,{{@name}}!</p>
-        <ul>
-           <li ms-for="($index,el) in @array">{{$index}}--{{el}}</li>
-        </ul>
+    <body ms-controller="test" >
+          <div  aaa='ddd' bbb=333
+                ms-attr='{title: @title,
+                    ddd:@src,
+                    lang:@lang}' >{{
+                   @src ? 333: 'empty'
+              }}</div>
+          <input ms-duplex="@src"/>
     </body>
 </html>
